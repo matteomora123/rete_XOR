@@ -4,7 +4,7 @@
 #include <time.h>
 
 #define INPUTS 3
-#define NEURONS_1 10
+#define NEURONS_1 5
 #define OUTPUTS 1
 
 #define LEARNING_RATE 0.001 // Learning rate for weight updates
