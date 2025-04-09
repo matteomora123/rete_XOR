@@ -327,8 +327,7 @@ int main(){
     printf("Avvio Addestramento:\n");
     for(int epoch = 0; epoch < EPOCHS; epoch++){
         double total_error = 0.0;
-        reset_gradients(&nn); // Aggiunta importante per stabilità!
-
+        
         // Imposta gli input del network
         for(int i = 0; i < TRAIN_DATASET_SIZE; i++){
             for(int j = 0; j < INPUTS; j++){
@@ -350,7 +349,8 @@ int main(){
                 total_error += fabs(nn.error_outputs[i]);
             }
         }
-
+        
+        reset_gradients(&nn); // Aggiunta importante per stabilità!
         // Errore medio
         total_error /= (double)TRAIN_DATASET_SIZE;
 
