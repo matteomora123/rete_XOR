@@ -191,7 +191,7 @@ void backpropagation(NeuralNewtork *nn, double *target){
     // Calcola l'errore: errore = output_rete - output_atteso
     //     Dopo questa operazione: error_outputs = output_outputs - expected_outputs
     // void v_sub(const double *A, double *B, const size_t dim)
-    v_sub(nn->error_outputs, target, OUTPUTS);
+    v_sub(target, nn->error_outputs, OUTPUTS);
     // occhio all'ordine della sottrazione, v_sub: B = B - A il gradiente avrà il segno invertito
 
     // Calcola la derivata della funzione di attivazione sigmoid
